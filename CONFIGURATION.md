@@ -6,5 +6,14 @@
 
 <img width="400" height="167" alt="Captura de pantalla 2025-11-27 141507" src="https://github.com/user-attachments/assets/684a30a2-4a5f-41cf-860d-1e83c66132db" />
 
+## A continuación crearemos un documento de texto: 
 
-<img width="399" height="168" alt="Captura de pantalla 2025-11-27 141940" src="https://github.com/user-attachments/assets/dac3e138-ca71-483b-b995-948e7bcc982e" />
+<img width="571" height="579" alt="Captura de pantalla 2025-11-27 141851" src="https://github.com/user-attachments/assets/72168a4f-f625-4258-98fd-8f70f0a1b4d2" />
+
+## Le pondremos el nombre y escogeremos plantilla si queremos
+
+<img width="399" height="168" alt="Captura de pantalla 2025-11-27 141940" src="https://github.com/user-attachments/assets/a834b3ad-b77e-4db6-80a8-df91229e3bb3" />
+
+## Y lo compartimos con quien queramos
+
+<img width="1525" height="334" alt="Captura de pantalla 2025-11-28 135821" src="https://github.com/user-attachments/assets/c393176b-8a90-4333-ac23-9ce5443225b6" />
