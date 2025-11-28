@@ -18,4 +18,16 @@
 
 <img width="1525" height="334" alt="Captura de pantalla 2025-11-28 135821" src="https://github.com/user-attachments/assets/c393176b-8a90-4333-ac23-9ce5443225b6" />
 
-## Lo siguiente será crear tres usuarios y para eso nos iremos a accounts
+## Lo siguiente será crear tres usuarios y para eso nos iremos a accounts:
+
+<img width="1828" height="549" alt="Captura de pantalla 2025-11-28 140837" src="https://github.com/user-attachments/assets/f4b23746-d5a3-472e-944e-8dc986a3681b" />
+
+## Ahora crearemos los grupos (editor, admin y visualizador):
+
+<img width="1514" height="197" alt="Captura de pantalla 2025-11-28 141516" src="https://github.com/user-attachments/assets/b40f91d6-2bcf-41c3-91e3-a7c6594bad0a" />
+
+## Seguidamente le daremos a New Account y crearemos tres usuarios, uno con admin, otro con editor y el último con visualizador:
+
+<img width="1443" height="686" alt="Captura de pantalla 2025-11-28 142345" src="https://github.com/user-attachments/assets/d46b4eb6-78c8-457d-848e-76e04acc0820" />
+
+## 
