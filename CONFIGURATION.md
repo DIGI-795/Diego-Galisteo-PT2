@@ -17,3 +17,5 @@
 ## Y lo compartimos con quien queramos
 
 <img width="1525" height="334" alt="Captura de pantalla 2025-11-28 135821" src="https://github.com/user-attachments/assets/c393176b-8a90-4333-ac23-9ce5443225b6" />
+
+## Lo siguiente será crear tres usuarios y para eso nos iremos a accounts
