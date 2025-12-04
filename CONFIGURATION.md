@@ -40,7 +40,7 @@
 
 ## A cada uno de los grupos le daremos un permiso diferente en el grupo visualizador le daremos el permiso "view only", al grupo editor "allow editing" y al grupo admin "custom permissions":
 
-<img width="503" height="736" alt="Screenshot 2025-12-04 at 12-17-41 All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/8acaf64c-00ed-4444-98d2-69f8cb6dab72" />
+<img width="500" height="634" alt="Screenshot 2025-12-04 at 20-43-21 prueba - All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/dbf5f3e9-7ffe-4fcb-b777-d6b0991abf16" />
 
 ## Por ejemplo ahora comprobaremos que el usuario visualizador solo pueda ver el documento que está en la carpeta o que el editor solo pueda editar:
 - Yo probaré con el usuario visualizador.
