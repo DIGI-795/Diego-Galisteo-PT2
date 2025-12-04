@@ -135,95 +135,102 @@ Este comando crea un enlace simbólico desde /etc/apache2/sites-available/ a /et
 
 ## 4. Reinicie Apache2
 
-Després de modificar la configuració, cal reiniciar el servei per aplicar els canvis:
-
+Después de modificar la configuración, debe reiniciar el servicio para aplicar los cambios:
+bash
 sudo systemctl restart apache2
 
-    Alternativa: sudo service apache2 restart (funciona, però systemctl és l’estàndard modern en sistemes basats en systemd).
+> **Alternativa:** sudo service apache2 restart (esto funciona, pero systemctl es el estándar moderno en los sistemas basados en systemd).
 
-## 5. Modificar /etc/hosts per resoldre el domini localment
+## 5. Modifique /etc/hosts para resolver el dominio localmente
 
-Perquè el vostre sistema resolgui el nom de domini www.domini.local cap a la vostra màquina, editeu el fitxer /etc/hosts:
-
+Para que su sistema resuelva el nombre de dominio www.domini.local en su máquina, edite el archivo /etc/hosts:
+bash
 sudo nano /etc/hosts
 
-Afegiu la línia següent:
+Añada la siguiente línea:
+127.0.0.1   www.domini.local domain.local
 
-127.0.0.1   www.domini.local domini.local
+Esto permite que el navegador encuentre su sitio web sin necesidad de un servidor DNS externo.
 
-Això permet que el navegador trobi el vostre lloc web sense necessitat d’un servidor DNS extern.
+## 6. Comprobar que funciona
 
-## 6. Comprovar el funcionament
+Abra un navegador y vaya a:
+http://www.domini.local
 
-## 7. Solució de problemes: Registres d’Apache2
-
-Si el lloc no funciona com s’espera, consulteu els registres d’Apache:
-
-### Registre d’errors
-Conté missatges sobre errors de configuració, permisos, fitxers no trobats, etc.
+Si el directorio /var/www/domini.local está vacío, Apache puede mostrar un error 403 o un listado de directorios (dependiendo de la configuración). Para comprobar que funciona, cree un archivo de prueba:
 bash
-sudo tail -f /var/log/apache2/domini.local_error.log
+echo «Hola, bienvenido a domain.local» | sudo tee /var/www/domain.local/index.html
 
-### Registre d’accés
-Mostra totes les peticions rebudes pel servidor.
+Vuelva a cargar la página y debería ver el mensaje.
+
+## 7. Solución de problemas: registros de Apache2
+
+Si el sitio no funciona como se espera, compruebe los registros de Apache:
+
+### Registro de errores
+Contiene mensajes sobre errores de configuración, permisos, archivos que faltan, etc.
 bash
-sudo tail -f /var/log/apache2/domini.local_access.log
+sudo tail -f /var/log/apache2/domain.local_error.log
 
-> **Consell:** Useu tail -f per veure les entrades en temps real mentre proveu el lloc.
-
-## 8. Assignació de permisos
-
-Apache2 s’executa normalment amb l’usuari www-data. Per evitar problemes de permisos, configureu el propietari i els permisos del directori del vostre lloc:
-
-### Canviar el propietari
-Permet que el vostre usuari pugui editar fitxers i que Apache els pugui llegir:
+### Registro de acceso
+Muestra todas las solicitudes recibidas por el servidor.
 bash
-sudo chown -R $USER:www-data /var/www/domini.local
+sudo tail -f /var/log/apache2/domain.local_access.log
 
-### Establir permisos adequats
-Assegureu-vos que el propietari i el grup tinguin accés complet, i que altres usuaris només puguin llegir:
+> **Consejo:** Utilice tail -f para ver las entradas en tiempo real mientras prueba el sitio.
+
+## 8. Configuración de permisos
+
+Apache2 normalmente se ejecuta con el usuario www-data. Para evitar problemas de permisos, configure el propietario y los permisos del directorio de su sitio:
+
+### Cambiar propietario
+Esto permite a su usuario editar archivos y a Apache leerlos:
 bash
-sudo chmod -R 775 /var/www/domini.local
+sudo chown -R $USER:www-data /var/www/domain.local
 
-> **Explicació:**  
-> - 7 (propietari): lectura, escriptura, execució  
-> - 7 (grup): lectura, escriptura, execució  
-> - 5 (altres): lectura i execució (necessari per accedir a directoris)
+### Establecer los permisos adecuados
+Asegúrese de que el propietario y el grupo tengan acceso completo y que los demás usuarios solo puedan leer:
+bash
+sudo chmod -R 775 /var/www/domain.local
 
-## Resum dels passos clau
+> **Explicación:**  
+> - 7 (propietario): lectura, escritura, ejecución  
+> - 7 (grupo): lectura, escritura, ejecución  
+> - 5 (otros): lectura y ejecución (necesario para acceder a los directorios)
 
-| Pas | Comanda / Acció |
+## Resumen de los pasos clave
+
+| Paso | Comando / Acción |
 |-----|------------------|
-| Crear directori | sudo mkdir -p /var/www/domini.local |
+| Crear directorio | sudo mkdir -p /var/www/domini.local |
 | Configurar VirtualHost | Editar /etc/apache2/sites-available/domini.local.conf |
-| Habilitar lloc | sudo a2ensite domini.local.conf |
+| Habilitar sitio | sudo a2ensite domini.local.conf |
 | Reiniciar Apache | sudo systemctl restart apache2 |
-| Afegir domini a hosts | 127.0.0.1 www.domini.local a /etc/hosts |
-| Verificar permisos | chown i chmod com s’indica |
-| Depurar errors | Consultar error.log i access.log |
+| Añadir dominio a hosts | 127.0.0.1 www.domini.local a /etc/hosts |
+| Comprobar permisos | chown y chmod como se indica |
+| Solucionar errores | Comprobar error.log y access.log |
 
-# 5. Guia d’instal·lació i configuració de plataformes cloud (Nextcloud / ownCloud)  
-**Dins d’un virtual host preconfigurat (`/var/www/domini.local`)**
+# 5. Guía de instalación y configuración para plataformas en la nube (Nextcloud / ownCloud)  
+**Dentro de un host virtual preconfigurado (`/var/www/domini.local`)**
 
-Aquesta guia explica com instal·lar **Nextcloud** o **ownCloud** en un entorn on ja tens un **virtual host actiu** apuntant a `/var/www/domini.local` (per exemple, `domini.local`). No cal configurar Apache ni el virtual host, ja que es considera ja operatiu.
+Esta guía explica cómo instalar **Nextcloud** u **ownCloud** en un entorno en el que ya se dispone de un **host virtual activo** que apunta a `/var/www/domain.local` (por ejemplo, `domain.local`). No es necesario configurar Apache ni el host virtual, ya que se supone que están operativos.
 
-## 1. Descàrrega i instal·lació de la plataforma cloud
+## 1. Descarga e instalación de la plataforma en la nube
 
-### 1.1. Enllaços oficials
+### 1.1. Enlaces oficiales
 
-- **Nextcloud**: [https://www.nextcloud.com](https://www.nextcloud.com)  
-  Descàrrega directa:  
+- **Nextcloud**: [https://www.nextcloud.com](https://www.nextcloud.com)
+Descarga directa:  
   [https://download.nextcloud.com/server/releases/latest.zip](https://download.nextcloud.com/server/releases/latest.zip)
 
 - **ownCloud**: [https://www.owncloud.org](https://www.owncloud.org)  
-  Descàrrega directa (versió estable):  
+  Descarga directa (versión estable):  
   [https://download.owncloud.com/server/stable/owncloud-complete-20240724.zip](https://download.owncloud.com/server/stable/owncloud-complete-20240724.zip)
 
-> **Nota**: Nextcloud és compatible amb PHP 8.1+, mentre que **ownCloud encara requereix PHP 7.4** en moltes versions estables. Assegura’t de tenir la versió de PHP adequada abans d’instal·lar.
-
+> **Nota**: 
 
 ### 1.2. Passos d’instal·lació
-
+ 
 1. **Mou’t al directori del virtual host**:
    ```bash
    cd /var/www/domini.local
