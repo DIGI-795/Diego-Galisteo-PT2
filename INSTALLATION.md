@@ -227,105 +227,105 @@ Descarga directa:
   Descarga directa (versión estable):  
   [https://download.owncloud.com/server/stable/owncloud-complete-20240724.zip](https://download.owncloud.com/server/stable/owncloud-complete-20240724.zip)
 
-> **Nota**: 
+> **Nota**: Nextcloud es compatible con PHP 8.1+, mientras que ownCloud todavía requiere PHP 7.4 para muchas versiones estables. Asegúrate de tener la versión adecuada de PHP antes de instalar.
 
-### 1.2. Passos d’instal·lació
+### 1.2. Pasos de instalación
  
-1. **Mou’t al directori del virtual host**:
-   ```bash
-   cd /var/www/domini.local
+1. **Vaya al directorio del host virtual**:
+```bash
+   cd /var/www/domain.local
    ```
-2. **Neteja el contingut actual** (si cal):
-   > Assegura’t que no hi ha dades importants abans d’executar això.
-   ```bash
+2. **Borra el contenido actual** (si es necesario):
+> Asegúrate de que no hay datos importantes antes de ejecutar esto.
+```bash
    sudo rm -rf *
    ```
-   
-3. **Descarrega el fitxer `.zip`** de la plataforma triada (Nextcloud o ownCloud) al teu sistema.
+
+3. **Descarga el archivo `.zip`** de la plataforma que hayas elegido (Nextcloud u ownCloud) a tu sistema.
     ```bash
     wget https://download.nextcloud.com/server/releases/latest.zip
    ```
 
-4. **Descomprimeix l’arxiu directament al directori**:
+4. **Descomprima el archivo directamente en el directorio**:
 
-   - **Heu descarregat l'arxiu a una ruta qualsevol**
-   ```bash
-   sudo unzip /ruta/al/arxiu.zip
+   - **Suponiendo que ha descargado el archivo en cualquier ruta**
+```bash
+   sudo unzip /path/to/file.zip
    ```
-   > Si l’arxiu crea una carpeta interna (ex: `nextcloud/` o `owncloud/`), assegura’t que el contingut es mogui **al nivell arrel** del virtual host:
+   > Si el archivo crea una carpeta interna (por ejemplo, `nextcloud/` o `owncloud/`), asegúrate de que el contenido se mueva **al nivel raíz** del host virtual:
    ```bash
    sudo mv nextcloud/* . && sudo rmdir nextcloud
    # o
    sudo mv owncloud/* . && sudo rmdir owncloud
    ```
 
-   - **Podeu fer això directament si ho teniu descomprimit a `Descargas`:**
+   - **Puede hacerlo directamente si lo ha descomprimido en `Descargas`:**
    ```bash
-   cp -R ~/Descargas/nextcloud/. /var/www/domini.local/.
+   cp -R ~/Descargas/nextcloud/. /var/www/dominio.local/.
    ```
-   Elimineu la carpeta `nextcloud` i l'arxiu `latest.zip`
-    ```bash
+   Elimine la carpeta `nextcloud` y el archivo `latest.zip`
+```bash
     sudo rm -rf ~/Descargas/nextcloud && sudo rm -rf ~/Descargas/latest.zip
     ```
 
-   - **Podeu fer això directament si ho teniu descomprimit a `/var/www/domini.local`:**
-   ```bash
-   cp -R /var/www/domini.local/nextcloud/. /var/www/domini.local/.
+   - **Puede hacerlo directamente si lo ha extraído a `/var/www/domain.local`:**
+```bash
+   cp -R /var/www/domain.local/nextcloud/. /var/www/domain.local/.
    ```
-   Elimineu la carpeta `nextcloud` i l'arxiu `latest.zip`
-    ```bash
-    sudo rm -rf /var/www/domini.local/nextcloud && sudo rm -rf /var/www/domini.local/latest.zip
+   Elimina la carpeta `nextcloud` y el archivo `latest.zip`
+```bash
+    sudo rm -rf /var/www/domain.local/nextcloud && sudo rm -rf /var/www/domain.local/latest.zip
     ```
-6. **Assegura els permisos correctes**:
-   ```bash
-   sudo chown -R www-data:www-data /var/www/domini.local
-   sudo chmod -R 755 /var/www/domini.local
+6. **Establezca los permisos correctos**:
+```bash
+   sudo chown -R www-data:www-data /var/www/domain.local
+   sudo chmod -R 755 /var/www/domain.local
    ```
 
-7. **Accedeix a la interfície web**:
-   Obre el navegador i visita:
-   ```
+7. **Acceda a la interfaz web**:
+   Abra su navegador y visite:
+```
    http://domini.local
    ```
-   Segueix les instruccions de configuració assistida:
-   - Crea un usuari administrador.
-   - Configura la base de dades (recomanat: MariaDB/MySQL).
-   - Verifica que tots els requisits del sistema es compleixin.
+   Siga las instrucciones de configuración guiadas:
+   - Cree un usuario administrador.
+   - Configure la base de datos (recomendado: MariaDB/MySQL).
+   - Verifique que se cumplan todos los requisitos del sistema.
 
-## 2. Recomanacions addicionals
+## 2. Recomendaciones adicionales
 
-- **Directori de dades**: Durant la instal·lació, es recomana **no emmagatzemar les dades dins del directori web** (ex: `/var/www/domini.local/data`). Millor usa una ruta externa com `/var/ncdata` o `/opt/owncloud-data`.
-- **Còpies de seguretat**: Fes *backups* regulars del directori de dades i de la base de dades.
-- **Seguretat**: Desactiva l’accés a fitxers sensibles (`.htaccess`, `config.php`) i considera afegir regles de seguretat addicionals a Apache o Nginx.
+- **Directorio de datos**: durante la instalación, se recomienda **no almacenar los datos dentro del directorio web** (por ejemplo, `/var/www/domain.local/data`). Es mejor utilizar una ruta externa como `/var/ncdata` o `/opt/owncloud-data`.
+- **Copias de seguridad**: Realice copias de seguridad periódicas del directorio de datos y de la base de datos.
+- **Seguridad**: Desactive el acceso a los archivos confidenciales (`.htaccess`, `config.php`) y considere la posibilidad de añadir reglas de seguridad adicionales a Apache o Nginx.
 
 
-## Apèndix: Instal·lació de PHP 7.4 a Ubuntu 24.04 (només per a ownCloud)
+## Apéndice: Instalación de PHP 7.4 en Ubuntu 24.04 (solo ownCloud)
 
-> **Aquest pas només és necessari si instal·les ownCloud**, ja que moltes versions estables encara no són compatibles amb PHP 8.3 (versió per defecte a Ubuntu 24.04). Nextcloud **no requereix aquest pas**.
+> **Este paso solo es necesario si va a instalar ownCloud**, ya que muchas versiones estables aún no son compatibles con PHP 8.3 (la versión predeterminada en Ubuntu 24.04). Nextcloud **no requiere este paso**.
 
-### Passos:
+### Pasos:
 
-1. **Actualitza el sistema**:
-   ```bash
+1. **Actualice el sistema**:
+```bash
    sudo apt update && sudo apt upgrade -y
    ```
 
-2. **Instal·la les dependències per afegir repositoris PPA**:
-   ```bash
+2. **Instale las dependencias para añadir repositorios PPA**:
+```bash
    sudo apt install software-properties-common -y
    ```
 
-3. **Afegeix el repositori de PHP de Ondřej Surý**:
-   ```bash
+3. **Añada el repositorio PHP de Ondřej Surý**:
+```bash
    LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php -y
    ```
 
-4. **Actualitza els repositoris**:
+4. **Actualice los repositorios**:
    ```bash
    sudo apt update
    ```
 
-5. **Instal·la PHP 7.4 i les extensions requerides**:
+5. **Instale PHP 7.4 y las extensiones necesarias**:
    ```bash
    sudo apt install -y php7.4 \
        libapache2-mod-php7.4 \
