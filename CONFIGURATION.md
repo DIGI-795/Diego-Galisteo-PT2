@@ -43,5 +43,7 @@
 <img width="503" height="736" alt="Screenshot 2025-12-04 at 12-17-41 All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/8acaf64c-00ed-4444-98d2-69f8cb6dab72" />
 
 ## Por ejemplo ahora comprobaremos que el usuario visualizador solo pueda ver el documento que está en la carpeta o que el editor solo pueda editar:
+- Yo probaré con el usuario visualizador
+- Una vez ya estemos con la cuenta del usuario visualizador iremos a files, entraremos a la carpeta que hemos creado anteriormente y nos metemos al documento 
 
 
