@@ -48,5 +48,23 @@
 
 <img width="1780" height="486" alt="Screenshot 2025-12-04 at 19-20-33 Prueba md - Nextcloud" src="https://github.com/user-attachments/assets/66687fd5-dcbc-4ac6-b034-2df56fe6c1ba" />
 
-## Ahora organizaremos nuestras carpetas creando una nueva y dentro de esta carpeta crearemos varias carpetas por ejemplo (documentos personales, trabajos compartidos y recursos)
-- Dentro pondremos nuestros archivos y ficheros.
+## Ahora organizaremos nuestras carpetas creando una nueva y dentro de esta carpeta crearemos varias carpetas por ejemplo (documentos personales, trabajos compartidos y recursos):
+- Dentro de cada carpeta pondremos o crearemos nuestros archivos y ficheros.
+
+<img width="320" height="300" alt="Screenshot 2025-12-04 at 19-31-38 All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/6388f4e6-dcf5-4813-908f-779a53581d88" />
+
+<img width="2726" height="335" alt="Screenshot 2025-12-04 at 20-11-41 Archivos - All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/ea1ca43e-27ad-4230-9516-ff7a36b491b4" />
+
+## En la carpeta activaremos la caducidad de un enlace compartido o pondremos una contraseña para acceder:
+- En mi caso pondré un enlace compartido con fecha de caducidad.
+- hay que darle a "create public link"
+
+<img width="490" height="618" alt="Screenshot 2025-12-04 at 20-19-20 Archivos - All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/caba8241-4331-4809-b5db-d36f075f0cbe" />
+
+## Seguidamente le daremos a "custom permissions":
+- donde al enlace le podemos poner contraseña o una fecha de caducidad.
+
+<img width="483" height="1012" alt="Screenshot 2025-12-04 at 20-25-02 Archivos - All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/08b3c0b6-0084-4d78-aebd-9567131aee0a" />
+
+## Explicación sobre como un dispositivo diferente a la máquina virtual puede acceder a NextCloud:
+- En resumen es saber la IP, añadirla a Nextcloud, abrir los puertos y entrar desde el navegador.
