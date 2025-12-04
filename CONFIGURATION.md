@@ -22,7 +22,7 @@
 
 <img width="1828" height="549" alt="Captura de pantalla 2025-11-28 140837" src="https://github.com/user-attachments/assets/f4b23746-d5a3-472e-944e-8dc986a3681b" />
 
-## Ahora crearemos los grupos (editor, admin y visualizador):
+## Ahora crearemos los grupos (editor, admin y visualizador): 
 
 <img width="1514" height="197" alt="Captura de pantalla 2025-11-28 141516" src="https://github.com/user-attachments/assets/b40f91d6-2bcf-41c3-91e3-a7c6594bad0a" />
 
