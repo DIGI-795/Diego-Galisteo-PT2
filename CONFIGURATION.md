@@ -28,6 +28,6 @@
 
 ## Seguidamente le daremos a New Account y crearemos tres usuarios, uno con admin, otro con editor y el último con visualizador:
 
-<img width="1443" height="686" alt="Captura de pantalla 2025-11-28 142345" src="https://github.com/user-attachments/assets/d46b4eb6-78c8-457d-848e-76e04acc0820" />
+<img width="382" height="581" alt="Captura de pantalla 2025-12-04 115957" src="https://github.com/user-attachments/assets/6bf2a354-d393-4fc4-83ae-d843c0a2093d" />
 
 ## 
