@@ -30,4 +30,18 @@
 
 <img width="382" height="581" alt="Captura de pantalla 2025-12-04 115957" src="https://github.com/user-attachments/assets/6bf2a354-d393-4fc4-83ae-d843c0a2093d" />
 
-## 
+## Después de hacer eso iremos a files y iremos a la carpeta que hemos creado antes:
+
+<img width="1823" height="563" alt="Screenshot 2025-12-04 at 12-15-18 All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/3df0d8bd-cb91-41d9-8f41-f019f940e6eb" />
+
+## Ahora compartiremos la carpeta dandóle a la persona con un + con los dos grupos que hemos creado:
+
+<img width="503" height="736" alt="Screenshot 2025-12-04 at 12-17-41 All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/de63cad2-2656-45a6-b79f-be9764a0c536" />
+
+## A cada uno de los grupos le daremos un permiso diferente en el grupo visualizador le daremos el permiso "view only", al grupo editor "allow editing" y al grupo admin "custom permissions":
+
+<img width="503" height="736" alt="Screenshot 2025-12-04 at 12-17-41 All files - Files - Nextcloud" src="https://github.com/user-attachments/assets/8acaf64c-00ed-4444-98d2-69f8cb6dab72" />
+
+## Por ejemplo ahora comprobaremos que el usuario visualizador solo pueda ver el documento que está en la carpeta o que el editor solo pueda editar:
+
+
